@@ -26,4 +26,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist  # Deploy the build folder
-          server-dir: /public_html/  # Directory on cPanel
+          server-dir: /public_html  # Directory on cPanel
