@@ -79,7 +79,7 @@ const Footer = () => {
             >
               @SAQISOLUTIONS.COM
             </a>
-            <p className="my-1">+92 321 6968609</p>
+            <p className="my-1">+92 303 4561671</p>
             {/* SOCIAL ICONS */}
             <div>
               {icons &&

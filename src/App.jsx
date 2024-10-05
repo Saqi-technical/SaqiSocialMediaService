@@ -1,10 +1,14 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import routes from "./routes/index.jsx";
 import "./App.css";
 import Loader from "./components/Loader.jsx";
 
 function App() {
+  useEffect(() => {
+   localStorage.clear()
+  }, [])
+  
   return (
     <Router>
       <Suspense fallback={<Loader />}>

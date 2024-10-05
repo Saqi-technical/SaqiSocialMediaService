@@ -16,7 +16,11 @@ export default {
         },
         red:{
           tiktok:"#E71C4F"
+        },
+        blue:{
+          linkedin:"#0E46A3"
         }
+
 
       },
    

@@ -1,7 +1,22 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { checkoutOrder } from "../redux/slicers/order.js";
 const PriceCard = ({ content }) => {
+  const { isAuthenticated } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const handleClick = (e, item) => {
+    e.preventDefault();
+
+    if (isAuthenticated) {
+      dispatch(checkoutOrder(item));
+      navigate("/checkout");
+    } else {
+      navigate("/validate/sign-in");
+    }
+  };
   return (
     <>
       {content &&
@@ -39,7 +54,10 @@ const PriceCard = ({ content }) => {
                 </li>
               ))}
             </ul>
-            <button className="my-2 flex text-center items-center justify-center rounded-lg bg-dark-button hover:bg-primary py-2 text-white mx-2 transition ease-in-out duration-500 ">
+            <button
+              onClick={(e) => handleClick(e, item)}
+              className="my-2 flex text-center items-center justify-center rounded-lg bg-dark-button hover:bg-primary py-2 text-white mx-2 transition ease-in-out duration-500 "
+            >
               Order Now{" "}
             </button>
           </div>

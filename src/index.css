@@ -64,3 +64,79 @@ button {
 @keyframes l8-2 {
     100%{transform: rotate(-180deg) translateX(25px)}
 }
+/* From Uiverse.io by Spacious74 */ 
+.outer {
+  width: 300px;
+  height: 250px;
+  border-radius: 10px;
+  padding: 1px;
+  background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
+  position: relative;
+}
+
+.dot {
+  width: 5px;
+  aspect-ratio: 1;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ffffff;
+  border-radius: 100px;
+  z-index: 2;
+  right: 10%;
+  top: 10%;
+  animation: moveDot 6s linear infinite;
+}
+
+
+/* Package screen */
+
+.package-layout-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  min-width: 100dvw;
+  min-height: 100dvh;
+  grid-template-rows: 0.5fr 1fr 1fr;
+  grid-template-areas: 
+  'packagediscountcard packagediscountcard packagediscountcard packagediscountcard'
+  'youtubecard youtubecard tiktokcard linkedIncard'
+  'instacard instacard tiktokcard linkedIncard'
+  
+  ;
+}
+.package-layout-grid .package-discount-card{
+  grid-area: packagediscountcard;
+}
+.package-layout-grid .youtube-card{
+  grid-area: youtubecard;
+}
+.package-layout-grid .tiktok-card{
+  grid-area: tiktokcard;
+}
+.package-layout-grid .linkedIn-card{
+  grid-area: linkedIncard;
+}
+.package-layout-grid .instagram-card{
+  grid-area: instacard;
+
+}
+/* Checkout screen  */
+.checkout{
+  display: grid;
+  min-width: 100dvw;
+  min-height: 100dvh;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: 
+  'checkoutInfo form'
+  ;
+
+}
+.checkout .checkout-info{
+  grid-area: checkoutInfo;
+
+}
+.checkout .checkout-form{
+  grid-area: form;
+}
